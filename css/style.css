@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor_principal_site: #171616;
+    --cor_fonte_destaque_site: #00B389;
+    --cor_botao_visualizar_projeto_github: #0066CC;
+    --cor_icones: #ffffff;
+    --cor_fonte_principal_site: #ffffff;
+    --fonte_familia_site: "Roboto", sans-serif;
+    --fonte_tamanho_h1: 2.5em;
+    --fonte_tamanho_h2: 2em;
+    --fonte_tamanho_paragrafos: 1em;
+    --espacamento_entre_linhas_paragrafos: 1.8em;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+}
+
+#cabecalho_principal_desktop {
+    background-color: var(--cor_principal_site);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 100px;
+    padding: 8px;
+    color: var(--cor_fonte_principal_site);
+}
+
+#menu_principal_desktop {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 8px;
+}
+
+#lista_menus {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 8px;
+    color: var(--cor_fonte_principal_site);
+     font-style: none;
+}
