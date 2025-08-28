@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
@@ -5,13 +7,13 @@
 }
 
 :root {
-    --cor_principal_site: #171616;
-    --cor_fonte_destaque_site: #00B389;
+    --cor_principal_site: ;
+    --cor_fonte_destaque_site: #ffffff;
     --cor_botao_visualizar_projeto_github: #0066CC;
     --cor_icones: #ffffff;
     --cor_fonte_principal_site: #ffffff;
-    --fonte_familia_site: "Roboto", sans-serif;
-    --fonte_tamanho_h1: 2.5em;
+    --fonte_familia_site: "Fira Sans", sans-serif;
+    --fonte_tamanho_h1: 4em;
     --fonte_tamanho_h2: 2em;
     --fonte_tamanho_paragrafos: 1em;
     --espacamento_entre_linhas_paragrafos: 1.8em;
@@ -20,28 +22,112 @@
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 46fr;
+     background: linear-gradient(90deg, #0e0d3a 10%, #111169 75%, #08076b 90%);
 }
 
 #cabecalho_principal_desktop {
-    background-color: var(--cor_principal_site);
+   
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    gap: 100px;
-    padding: 8px;
+    grid-template-columns: 2fr 6fr;
+    gap: 80px;
+    padding: 6px;
     color: var(--cor_fonte_principal_site);
+    place-items: center start;
+    border-bottom: 1px solid rgb(33, 37, 87);
 }
 
+#logo {
+    font-family: var(--fonte_familia_site);
+}
 #menu_principal_desktop {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 8px;
+    place-items: center start;
 }
 
 #lista_menus {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style: none;
+    place-items: center;
+    gap: 2px;
+}
+
+.botoes {
     padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    font-family: var(--fonte_familia_site);
     color: var(--cor_fonte_principal_site);
-     font-style: none;
+    cursor: pointer;
+}
+.botoes:hover {
+    background-color: #2c29da;
+    color: #ffffff;
+}
+
+#conteudo_principal_desktop {
+}
+#inicio {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    height: 91.5vh;
+}
+
+#imagem_principal_desktop {
+    display: grid;
+    place-items: center;
+}
+
+#fundo_imagem_desktop {
+    background-color: rgb(255, 255, 255);
+    height: 190px;
+    width: 180px;
+    border-radius: 20%;
+}
+
+#apresentacao_desktop {
+    display: grid;
+    place-items: center start;
+}
+
+#apresentacao p {
+    color: var(--cor_fonte_principal_site);
+    font-family: var(--fonte_familia_site);
+}
+
+#apresentacao h1 {
+    color: var(--cor_fonte_principal_site);
+    font-size: var(--fonte_tamanho_h1);
+    font-family: var(--fonte_familia_site);
+    width: 500px;
+}
+
+/* Pagina Projetos */
+
+#projetos {
+    display: grid;
+    height: 100vh;
+}
+
+/* Pagina Tecnologias */
+#tecnologias {
+    display: grid;
+    height: 100vh;
+}
+
+/* Pagina Sobre mim */
+#sobre {
+    display: grid;
+    height: 100vh;
+}
+
+/* Rodapé */
+
+#rodape {
+    display: grid;
+    height: 20vh;
+    background-color: #090822;
 }
