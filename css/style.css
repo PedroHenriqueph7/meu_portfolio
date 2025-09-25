@@ -23,7 +23,7 @@
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 60fr;
+    grid-template-rows: 0.7fr 60fr;
      background: linear-gradient(90deg, #0e0d3a 10%, #111169 75%, #08076b 90%);
      color: var(--cor_fonte_principal_site);
      font-family: var(--fonte_familia_site);
@@ -140,18 +140,27 @@ p {
 }
 
 .article_projetos {
-    background: linear-gradient(to bottom, rgb(45, 48, 150), rgb(30, 32, 136));
+   
     display: grid;
     grid-template-columns: 2fr 3fr;
     margin: 0px 15px;
-    border-radius: 10px;
+    
     height: 300px;
+
+     background-color: rgba(14, 20, 54, 0.5); 
+  
+  /* Desfoque no que está atrás do card */
+  backdrop-filter: blur(10px); 
+  
+  /* Uma borda sutil ajuda a definir o card */
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 10px; /* Seu border-radius */
 }
 
 /* No Moento enquanto não desenvolvo outro projeto a aba do projeto 3 ficará invisivel para visualizações */
 
 #article3 {
-    display: none;
+    
 }
 .fundo_imagem_projeto img{
     border-radius: 8px;
@@ -287,13 +296,22 @@ p {
 }
 
 .logos_tecnologias {
-    border: 1px solid #FFFBFB;
-    background-color: #302EB8;
-    border-radius: 10px;
+    
     display: grid;
     place-items: center;
     width: 150px;
     height: 150px;
+
+    
+  /* Cor de fundo com 50% de transparência */
+  background-color: rgba(14, 20, 54, 0.5); ; 
+  
+  /* Desfoque no que está atrás do card */
+  backdrop-filter: blur(10px); 
+  
+  /* Uma borda sutil ajuda a definir o card */
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 10px; /* Seu border-radius */
 
 }
 
@@ -301,6 +319,7 @@ p {
     width: 150px;
     height: 275px;
     display: grid;
+
     grid-template-rows: 1fr 1.5fr;
     gap: 7px;
 }
@@ -330,15 +349,95 @@ p {
 
 
 /* Pagina Sobre mim */
-#sobre {
+#pagina_sobre {
     display: grid;
     height: 100vh;
+    grid-template-columns: 1.5fr 3fr;
+    
 }
 
-/* Rodapé */
+#bloco_foto_sobre {
+    display: grid;
+    place-items: center;
+}
+#imagem_sobre img{
+    border-radius: 50%;
+}
 
+#descricao_sobre {
+    display: grid;
+    place-items: center start;
+}
+
+#titulo_sobre {
+    display: grid;
+    width: 700px;
+}
+#descricao_sobre_mim {
+    display: grid;
+    place-items: center start;
+    width: 700px;
+
+    grid-template-rows: 1fr 4fr 1fr;
+    height: 350px;
+    place-items: center start;
+}
+
+#texto_sobre {
+    padding-top: 15px;
+}
+#contatos_sobre {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    place-items: center start;
+    width: 700px;
+    height: 100px;
+}
+
+#botao_curriculo {
+    height: 40px;
+    width: 120px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #FFFBFB;
+    color: #ffffff;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-weight: bold;
+}
+
+#botao_curriculo a {
+    text-decoration: none;
+    color: black;
+    
+}
+#redes_sociais {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 400px;
+    place-items: center;
+}
+
+
+
+
+/* Rodapé */
 #rodape {
     display: grid;
     height: 20vh;
     background-color: #090822;
+    place-items: center;
+}
+
+#linha_rodape {
+    margin-top: 12px;
+    height: 15px;
+    width: 500px;
+    border-top: 1px solid #FFFBFB;
+}
+
+#referencias_rodape {
+    text-align: center;
 }
