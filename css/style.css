@@ -6,6 +6,8 @@
     box-sizing: border-box;
 }
 
+
+
 :root {
     --cor_principal_site: ;
     --cor_fonte_destaque_site: #ffffff;
@@ -20,14 +22,25 @@
     --espacamento_entre_linhas_paragrafos: 1.8em;
 }
 
+html {
+  /* Garante que o html ocupe 100% da altura */
+  height: 100%;
+}
+
 body {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.7fr 60fr;
-     background: linear-gradient(90deg, #0e0d3a 10%, #111169 75%, #08076b 90%);
-     color: var(--cor_fonte_principal_site);
-     font-family: var(--fonte_familia_site);
-     
+  display: grid;
+  /* Uma única coluna que ocupa todo o espaço */
+  grid-template-columns: 1fr;
+  /* A MÁGICA ACONTECE AQUI */
+  grid-template-rows: auto 1fr auto; 
+  
+  /* Garante que o body tenha no mínimo a altura da tela */
+  min-height: 100%; /* ou min-height: 100vh; */
+
+  /* Suas outras propriedades continuam aqui */
+  background: linear-gradient(90deg, #0e0d3a 10%, #111169 75%, #08076b 90%);
+  color: var(--cor_fonte_principal_site);
+  font-family: var(--fonte_familia_site);
 }
 
 main {
