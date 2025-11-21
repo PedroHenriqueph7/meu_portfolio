@@ -21,8 +21,14 @@
 }
 
 body {
+
     display: grid;
-    grid-template-rows: 0.5fr 20fr 2fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 100%; 
+    text-align: center;
+
     background: linear-gradient(90deg, #0e0d3a 10%, #111169 75%, #08076b 90%);
     color: var(--cor_fonte_principal_site);
     font-family: var(--fonte_familia_site);
@@ -89,7 +95,7 @@ main {
     padding: 8px 20px;
     border: 1px solid #FFFBFB;
     border-radius: 10px;
-
+    margin: 25px 0px;
 }
 
  a {
@@ -135,13 +141,76 @@ main {
 }
 
 #linha_rodape {
+    margin-top: 12px;
     height: 15px;
     width: 500px;
     border-top: 1px solid #FFFBFB;
 }
-
+#rodape #referencias_rodape h3 {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
 #referencias_rodape {
     text-align: center;
-    display: grid;
-    place-items: start center;
 }
+
+
+
+
+/* Responsividade do Portfólio */
+
+/* 1. BREAKPOINT SM (small) - Telas Pequenas */
+/* Aplica-se a telas com 640px de largura ou mais (celulares grandes, tablets em modo retrato) */
+@media (min-width: 640px) {
+  /* Exemplo: Aumentar um pouco o espaçamento geral da página */
+  /* body {
+    padding: 0 24px;
+  } */
+}
+
+/* 2. BREAKPOINT MD (medium) - Telas Médias */
+/* Aplica-se a telas com 768px de largura ou mais (tablets em modo paisagem, laptops pequenos) */
+@media (min-width: 768px) {
+  /* Este é um breakpoint muito comum para grandes mudanças. */
+
+  /* Exemplo: Mudar o layout de projetos para 2 colunas */
+  /* .projetos-grid {
+    grid-template-columns: 1fr 1fr;
+  } */
+
+  /* Exemplo: Esconder o menu hambúrguer e mostrar o menu de navegação completo */
+  /* .menu-hamburguer {
+    display: none;
+  }
+  .navegacao-principal {
+    display: flex;
+  } */
+}
+
+/* 3. BREAKPOINT LG (large) - Telas Grandes */
+/* Aplica-se a telas com 1024px de largura ou mais (laptops e desktops) */
+@media (min-width: 1024px) {
+  /* Exemplo: Mudar o layout para 3 colunas */
+  /* .projetos-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
+
+  /* Exemplo: Limitar a largura do conteúdo para melhor legibilidade */
+  /* main > section {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  } */
+}
+
+/* 4. BREAKPOINT XL (extra-large) - Telas Extra Grandes (Opcional, mas bom ter) */
+/* Aplica-se a telas com 1280px de largura ou mais (desktops grandes) */
+@media (min-width: 1280px) {
+  /* Aqui você pode aumentar o tamanho das fontes, paddings, etc. */
+  
+  /* Exemplo: Aumentar a fonte base do site */
+  /* html {
+    font-size: 18px;
+*/
+  } 
