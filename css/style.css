@@ -172,6 +172,7 @@ p {
 
 .article_projetos:hover {
     background-color:rgba(9, 26, 126, 0.5);
+    transform: scale(1.02);
 }
 .fundo_imagem_projeto img{
     border-radius: 8px;
