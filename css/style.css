@@ -338,6 +338,7 @@ p {
 
 .logos_tecnologias:hover {
     background-color:rgba(9, 26, 126, 0.5);
+    transform: scale(1.06);
 }
 
 .blocos_tech {
@@ -441,8 +442,11 @@ p {
 }
 
 #botao_curriculo:hover {
-    background-color:#0084ffc5;
-    color: white;
+    background-color:#2c29da;
+
+    a{
+        color: white;
+    }
 }
 
 #redes_sociais {
