@@ -155,22 +155,23 @@ p {
 #article1 {
     order: 1;
 }
-.article_projetos {
-   
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    margin: 0px 15px;
-    
-    height: 300px;
 
-     background-color: rgba(14, 20, 54, 0.5); 
-  
-  /* Desfoque no que está atrás do card */
-  backdrop-filter: blur(10px); 
-  
-  /* Uma borda sutil ajuda a definir o card */
-  border: 1px solid rgba(255, 255, 255, 0.1); 
-  border-radius: 10px; /* Seu border-radius */
+.article_projetos {
+    /* Mágica do Flexbox */
+    display: flex; 
+    flex-direction: row; /* Imagem ao lado do conteúdo */
+    align-items: stretch; 
+    
+    /* Limites e Visual */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(14, 20, 54, 0.6); /* Um pouco mais escuro para leitura */
+    backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden; /* Garante bordas redondas na imagem */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .article_projetos:hover {
@@ -182,7 +183,17 @@ p {
 }
 
 .fundo_imagem_projeto {
-    height: 300px;
+    /* Tamanho fixo da área da imagem no Desktop */
+    flex: 0 0 440px; /* Não cresce, não encolhe, base 400px */
+    margin: 0;
+    position: relative; /* Para garantir comportamento correto */
+}
+
+.imagem_projetos {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* A imagem preenche tudo sem distorcer */
+    display: block;
 }
 
 .descricao_projeto {
@@ -217,6 +228,14 @@ p {
 }
 
 .tecnologiasp2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-items: center start;
+    width: 80%;
+    
+}
+
+.tecnologiasp3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     place-items: center start;
@@ -438,18 +457,15 @@ p {
     font-weight: bold;
 }
 
-#botao_curriculo a {
+a #botao_curriculo{
     text-decoration: none;
     color: black;
     
 }
 
-#botao_curriculo:hover {
+a #botao_curriculo:hover {
     background-color:#2c29da;
-
-    a{
-        color: white;
-    }
+    color: white;  
 }
 
 #redes_sociais {
@@ -476,4 +492,97 @@ p {
 
 #referencias_rodape {
     text-align: center;
+}
+
+
+
+/* =========================================
+   RESPONSIVIDADE (TABLETS E TELAS MÉDIAS)
+   Abaixo de 950px (ex: iPad, Tablets, Laptops pequenos)
+   ========================================= */
+@media (max-width: 950px) {
+
+    /* 1. O Card vira uma coluna vertical */
+    .article_projetos {
+        flex-direction: column; 
+        height: auto; /* Altura livre para crescer o quanto precisar */
+        max-width: 600px; /* Limita a largura para não ficar muito esticado no tablet */
+    }
+
+    /* 2. Imagem ocupa o topo inteiro */
+    .fundo_imagem_projeto {
+        flex: none; /* Remove a trava de tamanho do desktop */
+        width: 100%;
+        height: 250px; /* Altura fixa para criar um "banner" bonito */
+    }
+
+    /* 3. Área de conteúdo se organiza */
+    .descricao_projeto {
+        flex-direction: column; /* Texto em cima, botões embaixo */
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .campo_texto {
+        width: 100%; /* Garante uso total da largura */
+    }
+
+    /* 4. Área dos Botões (Transformação Total) */
+    .campo_botoes_projeto {
+        flex: none; /* Reseta o tamanho fixo do desktop */
+        width: 100%;
+        
+        /* Layout Horizontal para Tablet */
+        flex-direction: row; 
+        justify-content: space-between; /* Espalha os botões */
+        
+        /* Ajustes de borda: Tira a da esquerda e põe em cima */
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    /* Botões dividem o espaço igualmente no tablet */
+    .botao_visualizar_github, 
+    .botao_previa_projeto {
+        width: 48%; /* Quase metade para cada, deixando um espacinho no meio */
+    }
+}
+
+/* =========================================
+   RESPONSIVIDADE (CELULARES)
+   Abaixo de 550px (ex: iPhone, Androids comuns)
+   ========================================= */
+@media (max-width: 550px) {
+
+    /* 1. Ajuste fino na imagem */
+    .fundo_imagem_projeto {
+        height: 200px; /* Um pouco menor para sobrar espaço pro texto */
+    }
+
+    /* 2. Botões empilhados (Melhor para clicar com o polegar) */
+    .campo_botoes_projeto {
+        flex-direction: column; /* Um embaixo do outro */
+        gap: 10px;
+    }
+
+    .botao_visualizar_github, 
+    .botao_previa_projeto {
+        width: 100%; /* Botão "gordo" ocupando toda a largura */
+        height: 50px; /* Mais alto para facilitar o toque (Touch Target) */
+    }
+
+    /* 3. Ajuste de Tipografia para telas pequenas */
+    .titulo_projeto h3 {
+        font-size: 1.3rem; /* Título levemente menor */
+    }
+    
+    .texto_projeto p {
+        font-size: 0.9rem; /* Texto levemente menor para caber mais */
+    }
+
+    .descricao_projeto {
+        padding: 15px; /* Menos borda para aproveitar a tela */
+    }
 }
