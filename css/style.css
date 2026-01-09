@@ -43,7 +43,7 @@ body {
 }
 
 main {
-    display: none;
+    display: grid;
     gap: 50px;
 }
 
@@ -217,27 +217,79 @@ p {
     border-radius: 25%;
 }
 
+
 #apresentacao_desktop {
     display: grid;
-    place-items: center start;
+    place-items: center start; 
+    
+    min-height: 60vh; 
+    padding: 0 20px; 
+    
+    width: 100%; 
+    box-sizing: border-box; 
 }
+
+
+#apresentacao {
+    width: 100%;
+    max-width: 1200px; 
+}
+
 
 #apresentacao p {
     color: var(--cor_fonte_principal_site);
     font-family: var(--fonte_familia_site);
+    line-height: 1.6; 
+    
+    font-size: 1rem; 
 }
 
 #apresentacao h1 {
     color: var(--cor_fonte_principal_site);
-    font-size: var(--fonte_tamanho_h1);
     font-family: var(--fonte_familia_site);
-    width: 500px;
+    
+    
+    width: 100%;
+    max-width: 400px; 
+    
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    
+    line-height: 1.2; 
+    margin: 10px 0 20px 0; 
 }
+
+
+@media (max-width: 768px) {
+
+    #inicio {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr;
+    }
+
+    #imagem_principal_desktop {
+        padding: 40px 0 0 0;
+    }
+
+    #apresentacao_desktop {
+        place-items: center center;
+        text-align: center;
+    }
+
+    #apresentacao h1 {
+        /* Garante que o título não fique largo demais no mobile centralizado */
+        max-width: 100%; 
+    }
+}
+
+
+
+
 
 /* Pagina Projetos */
 
 #pagina_projetos {
-    display: grid;
+    display: none;
     min-height: 100vh; 
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr; 
@@ -410,7 +462,7 @@ p {
 
 /* Pagina Tecnologias */
 #pagina_tecnologias {
-    display: grid;
+    display: none;
     min-height: 100vh; 
     
     grid-template-rows: auto 1fr;
@@ -497,7 +549,7 @@ p {
 
 /* Pagina Sobre mim */
 #pagina_sobre {
-    display: grid;
+    display: none;
     height: 100vh;
     grid-template-columns: 1.5fr 3fr;
     
